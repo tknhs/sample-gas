@@ -1,0 +1,10 @@
+services:
+  clasp:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./:/app
+      - ./.clasprc.json:/root/.clasprc.json
+    init: true
+    tty: true
