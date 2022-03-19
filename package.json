@@ -7,6 +7,7 @@
   "scripts": {
     "lint": "prettier './src/**/*.{js,ts}' && eslint './src/**/*.{js,ts}'",
     "lintfix": "prettier --write './src/**/*.{js,ts}' && eslint --fix './src/**/*.{js,ts}'",
+    "build": "yarn lintfix && cp src/appsscript.json dist/appsscript.json && tsc",
     "push": "yarn lintfix && cp src/appsscript.json dist/appsscript.json && tsc && clasp push -f",
     "deploy-develop": "yarn push && clasp deploy -i AKfycbwhLvDD-Mvx4Il-bce_uQZIloMMaWm8iuwVuECYkFKuGNcTaQcszD7_nnaDpLXctUGs -d 'develop'",
     "deploy-production": "yarn push && clasp deploy -i AKfycbyI8MvCXMlCYtIAf008tlx4JoThoL2Dn0up1qL9JY3Fzaevm_asy3iRm6gnpkk14toS -d 'production'"
