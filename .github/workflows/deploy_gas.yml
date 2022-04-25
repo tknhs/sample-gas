@@ -24,10 +24,10 @@ jobs:
       - name: node install
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
 
-      - name: install clasp
-        run: npm install -g @google/clasp
+      - name: install deps
+        run: yarn install
 
       - name: create clasprc.json
         run: |
