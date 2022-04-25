@@ -14,7 +14,7 @@ on:
 
 jobs:
   deployment:
-    name: "Deploy to ${{ github.event.inputs.mode }}"
+    name: "Deploy to ${{ github.event.inputs.target }}"
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -50,4 +50,4 @@ jobs:
           }
           EOS
       - name: deploy
-        run: yarn deploy-${{ github.event.inputs.mode }}
+        run: yarn deploy-${{ github.event.inputs.target }}
